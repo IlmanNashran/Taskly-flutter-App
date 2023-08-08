@@ -18,6 +18,8 @@ class _HomePageState extends State<HomePage> {
   Box? _box;
   _HomePageState();
 
+
+//reset application
   @override
   void initState() {
     // TODO: implement initState
@@ -43,6 +45,8 @@ class _HomePageState extends State<HomePage> {
     );
   }
 
+
+//custome task list 
   Widget _taskList() {
     List tasks = _box!.values.toList();
     return ListView.builder(
@@ -81,6 +85,7 @@ class _HomePageState extends State<HomePage> {
     );
   }
 
+//button adding fuxtion to the _displayTaskPopup fuction
   Widget _addTaskButton() {
     return FloatingActionButton(
       onPressed: _displayTaskPopup,
@@ -91,7 +96,7 @@ class _HomePageState extends State<HomePage> {
   }
 
 
-  // fuction
+  // fuction button adding data
   void _displayTaskPopup() {
     showDialog(
         context: context,
@@ -122,6 +127,8 @@ class _HomePageState extends State<HomePage> {
         });
   }
 
+
+//fuction  first to view all task availabel
   Widget _tasksView() {
     return FutureBuilder(
       future: Hive.openBox('task'),
